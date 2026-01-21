@@ -49,7 +49,7 @@ def fiche_livre(titre):
     if not est_authentifie():
         return redirect(url_for('authentification'))
 
-    conn = sqlite3.connect('/home/raul65/www/flask/database.db')
+    conn = sqlite3.connect('database.db')
     cursor = conn.cursor()
     # Recherche dans la nouvelle table 'livres'
     cursor.execute('SELECT * FROM livres WHERE titre LIKE ?', ('%' + titre + '%',))
